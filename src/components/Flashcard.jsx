@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 
 
 function flashcard({ flashcard }) {
@@ -19,6 +19,7 @@ function flashcard({ flashcard }) {
     window.addEventListener('resize', setMaxHeight)
     return () => window.removeEventListener('resize', setMaxHeight)
   }, [])
+  
 
   return (
     <div 
@@ -26,14 +27,14 @@ function flashcard({ flashcard }) {
       style={{ height: height }}
       onClick={() => setFlip(!flip)}>
       
-      <div className="front" ref= {frontEl}>
+      <div className="front" ref={frontEl}>
         {flashcard.question}
         <div className="flashcard-options">
           {flashcard.options.map(option => {
             return <div className="flashcard-option" key={option}>{option}</div>
           })}
       </div>
-        <div className='back' ref = {backEl}>{flashcard.answer}</div>
+        <div className='back' ref={backEl}>{flashcard.answer}</div>
       </div>
       {flip ? flashcard.answer : flashcard.question}
     </div>
