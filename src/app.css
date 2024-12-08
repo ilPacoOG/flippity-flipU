@@ -1,6 +1,6 @@
 body {
-    background-color: #C8D0D2;
-    margin: 0;
+   background-color: #C8D0D2;
+   margin: 0;
   }
   
   .container {
@@ -51,6 +51,25 @@ body {
   }
   
   .card {
+    background-color: grey;
+    margin: 0;
+
+}
+
+.container {
+    max-width: 900px;
+    margin: 1ren 2rem;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.card {
+
     display: flex;
     justify-content: center;
     align-items: center;
